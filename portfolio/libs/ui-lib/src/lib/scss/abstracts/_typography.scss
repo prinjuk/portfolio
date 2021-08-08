@@ -64,7 +64,7 @@ $text-xxl: ($text-xs + 1); // 20px
 }
 
 .text-success {
-  color: $app-theme-primary-dark;
+  color: $text-secondary-theme;
 }
 
 %form-label {

@@ -3,6 +3,9 @@
 @use "./typography"as *;
 @use "./palette"as *;
 
+rtl,[dir='rtl']{
+  direction: rtl;
+}
 .visually-hidden {
   position: absolute;
   width: 1px;

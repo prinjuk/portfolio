@@ -107,10 +107,7 @@
 
 %form-item-shadow {
   box-shadow: 0 0 0 3px transparentize($color: $app-theme-primary, $amount: 0.8);
-}
-%form-item-shadow-iconround {
-  box-shadow: 0 0 0 3px transparentize($color: $indigo-blue, $amount: 0.8);
-}
+} 
 %form-error-shadow {
   box-shadow: 0 0 0 3px transparentize($color: $error, $amount: 0.8);
 }

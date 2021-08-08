@@ -1,0 +1,4 @@
+@use '../abstracts/palette' as *;
+body {
+  background-color: $app-theme-black-1;
+}

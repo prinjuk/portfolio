@@ -1,0 +1,179 @@
+@use 'abstracts/utilities' as *;
+@use 'abstracts/variables' as *;
+@use 'abstracts/typography' as *;
+@use 'abstracts/breakpoints' as *;
+@use 'abstracts/helpers' as *;
+@use 'abstracts/palette' as *;
+
+.app-l-landing-section {
+  @extend %flex;
+  &--left {
+    margin-right: auto;
+    margin-top: 278px;
+    .rtl &,
+    [dir='rtl'] & {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+  &--right {
+    margin-top: 140px;
+    margin-left: auto;
+    .rtl &,
+    [dir='rtl'] & {
+      margin-left: 0;
+      margin-right: auto;
+    }
+    img {
+      max-height: 591px;
+      width: 100%;
+    }
+  }
+  &--name {
+    @extend %flex-col;
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    .first-name {
+      font-weight: $font-weight-bold;
+      font-size: 6.4rem;
+      line-height: 9rem;
+      color: $text-primary-theme;
+    }
+    .last-name {
+      font-weight: $font-weight-regular;
+      font-size: 6.4rem;
+      margin-bottom: 30px;
+      color: $app-theme-white-1;
+    }
+  }
+  &--job {
+    font-family: $body-font;
+    font-size: 3.6rem;
+    line-height: 3.7rem;
+    color: $text-primary-theme;
+    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 10s infinite linear;
+  }
+  &--highlight-actions {
+    margin-top: 93px;
+    .app-btn-group {
+      @extend %flex-vert-center;
+    }
+  }
+}
+.app-l-landing-aboutme {
+  @extend %flex;
+  margin-top: 270px;
+  position: relative;
+  &--left {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    max-width: 400px;
+    .profile-pic {
+      position: absolute;
+      left: 97px;
+      top: 35px;
+      width: 241px;
+    }
+    .profile-pic-graphics {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
+  }
+  &--right {
+    margin-left: 70px;
+    max-width: 633px;
+    .rtl &,
+    [dir='rtl'] & {
+      margin-left: 0;
+      margin-right: 70px;
+    }
+  }
+  &--fullname {
+    font-size: 4.8rem;
+    line-height: 4.8rem;
+    color: $text-primary-theme;
+    margin-bottom: 23px;
+  }
+  &--role {
+    font-size: $text-xl;
+    color: $text-primary-theme;
+    text-transform: uppercase;
+    line-height: 1.9rem;
+    margin-bottom: 32px;
+  }
+  &--intro {
+    font-size: $text-xl;
+    color: $app-theme-white-1;
+    text-transform: lowercase;
+    line-height: 3.8rem;
+    margin-bottom: 20px;
+  }
+  &--skills {
+    font-size: 2.4rem;
+    color: $text-primary-theme;
+    line-height: 2.5rem;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    &-text {
+      font-size: $text-xl;
+      color: $text-primary-theme;
+      line-height: 3.4rem;
+    }
+    &-pics {
+      ul {
+        margin-top: 42px;
+        @extend %flex-vert-center;
+        li {
+          margin-right: 19px;
+          img{
+              width: 40px;
+          }
+          .rtl &,
+          [dir='rtl'] & {
+            margin-left: 19px;
+            margin-right: 0;
+          }
+          &:last-child {
+            margin-right: 0;
+            .rtl &,
+            [dir='rtl'] & {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.app-l-plus-animator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  .plus-animate--white{
+      stroke: $app-theme-white-1;
+      animation:  $animation-type1 5s glow infinite;
+  }
+}
+@keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+@keyframes glow {  
+    50% {
+      stroke: $text-secondary-theme;
+    }
+    100% {
+        stroke: $app-theme-white-1
+    }
+}

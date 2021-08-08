@@ -1,6 +1,8 @@
 @use '../framework/buttons' as *;
 @use '../abstracts/typography' as *;
 @use '../abstracts/palette' as *;
+@use '../abstracts/utilities' as *;
+@use '../abstracts/variables' as *;
 
 .app-c-btn {
   @include button;
@@ -11,7 +13,9 @@
   color: $black;
   border: 1px solid transparent;
   border-radius: 25px;
-  transition: border-color 0.3s;
+  transition: border-color $animation-type1 $animation-duration3,
+  background-color $animation-type1 $animation-duration3,
+  color $animation-type1 $animation-duration3;
   line-height: 1.1rem;
   &:hover {
     text-decoration: none;
@@ -30,5 +34,55 @@
     background-color: transparent;
     border: 0;
     cursor: pointer;
+  }
+  &--primary{
+    min-width: 180px;
+    height: 58px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    background-color: $app-theme-primary;
+    color: $app-theme-secondary;
+    font-weight: $font-weight-bold;
+    font-family: $font-secondary;
+    @extend %flex-all-center;
+    font-size: $text-xl;
+    line-height: 2.7rem;
+    &:hover {
+      text-decoration: none;
+      border-color: $app-theme-secondary;
+    }
+    &:focus {
+      outline: none;
+      border-color: rgba(151, 155, 154, 0.5);
+    }
+    &:active{
+      background-color: $app-theme-black-1;
+    }
+    &:disabled,
+    &.disabled {
+      color: rgba(15, 10, 55, 0.5);
+      cursor: not-allowed;
+    }
+  
+  }
+}
+.app-btn-group{
+  button{
+    margin-top: 10px;
+    margin-right: 35px;
+    & + button{
+      .rtl &,
+      [dir='rtl'] &{
+        margin-right: 0;
+        margin-left: 35px;
+      }
+      &:last-child{
+        margin-right: 0;
+        .rtl &,
+        [dir='rtl'] &{ 
+          margin-left: 0;
+        }
+      }
+    }
   }
 }
