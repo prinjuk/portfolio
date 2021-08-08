@@ -1,0 +1,34 @@
+@use '../framework/buttons' as *;
+@use '../abstracts/typography' as *;
+@use '../abstracts/palette' as *;
+
+.app-c-btn {
+  @include button;
+  text-align: center;
+  font-family: $body-font;
+  font-size: $text-xl;
+  font-weight: $font-weight-regular;
+  color: $black;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  transition: border-color 0.3s;
+  line-height: 1.1rem;
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none;
+    border-color: rgba(151, 155, 154, 0.5);
+  }
+  &:disabled,
+  &.disabled {
+    color: rgba(15, 10, 55, 0.5);
+    cursor: not-allowed;
+  }
+
+  &--no-theme {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+}

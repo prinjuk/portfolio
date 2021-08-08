@@ -1,0 +1,28 @@
+@use "./palette" as *;
+
+//Header
+$main-header-signup-h: 97px;
+$main-header-h: 80px;
+
+//Animation
+$animation-type1: ease;
+$animation-type2: ease-in;
+$animation-type3: ease-out;
+
+$animation-duration1: 0.1s;
+$animation-delay1: 0.1s;
+
+$animation-duration2: 0.2s;
+$animation-delay2: 0.2s;
+
+$animation-duration3: 0.3s;
+$animation-delay3: 0.3s;
+
+$animation-duration4: 0.4s;
+
+//form items
+$field-addon-btn-radius: 25px;
+$field-p-x: 16px;
+$btn-field-check-radio-w-h: 18px;
+$field-check-radio-w-h: 24px;
+$field-check-radio-w-s: 16px; 

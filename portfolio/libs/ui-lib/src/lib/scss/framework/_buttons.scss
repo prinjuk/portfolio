@@ -1,0 +1,10 @@
+@mixin button {
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+  background-clip: padding-box;
+  /* prevents background overflowing transparent border color */
+  position: relative;
+}

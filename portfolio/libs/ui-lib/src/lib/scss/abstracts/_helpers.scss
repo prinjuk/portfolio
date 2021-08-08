@@ -1,0 +1,120 @@
+@use "./variables"as *;
+@use "./breakpoints"as *;
+@use "./typography"as *;
+@use "./palette"as *;
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.is-block {
+  display: block;
+}
+
+.is-d-none {
+  display: none;
+}
+
+@mixin is-mobile-d-none {
+  @media (max-width: $screen-md) {
+    display: none;
+  }
+}
+
+@mixin is-desktop-d-none {
+  @media (min-width: $screen-md) {
+    display: none;
+  }
+}
+
+.img-auto {
+  max-width: 100%;
+  height: auto;
+}
+
+.form-error-text {
+  visibility: hidden;
+  margin-left: 10px;
+  padding-top: 8px;
+  font-size: $text-sm;
+  color: $error;
+  opacity: 0;
+  transform: translateY(-0.6666em);
+  transition: opacity $animation-type1 $animation-duration3,
+    transform $animation-type1 $animation-duration3;
+  min-height: 12px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+
+  &.block {
+    position: relative;
+  }
+
+  .error-label {
+    margin-left: 5px;
+    padding-top: 2px;
+    font-size: 1.5rem;
+  }
+}
+
+.form-error {
+  border-color: $error;
+
+  & ~ .form-error-text {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.icon-svg {
+  display: block;
+  pointer-events: none;
+  transition: color $animation-type1 $animation-duration3;
+}
+
+@for $i from 8 through 32 {
+  @if $i % 2==0 {
+    .icon-size-#{$i} {
+      width: #{$i}px;
+      height: #{$i}px;
+
+      .icon-svg {
+        @extend .icon-size-#{$i};
+      }
+    }
+
+    .addon-size-#{$i} {
+      .app-btn-addon {
+        @extend .icon-size-#{$i};
+      }
+    }
+  }
+}
+
+.icon-stroke {
+  stroke: currentColor;
+}
+
+.icon-fill {
+  fill: currentColor;
+}
+
+.icon-fill,
+.icon-stroke {
+  &--white {
+    fill: $white;
+  }
+
+  &--black {
+    fill: $black;
+  }
+}
