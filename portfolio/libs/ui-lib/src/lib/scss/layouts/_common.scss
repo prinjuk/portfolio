@@ -1,4 +1,9 @@
 @use '../abstracts/palette' as *;
+@use '../abstracts/typography' as *;
 body {
   background-color: $app-theme-black-1;
+}
+.text-highlight{
+  color: $text-secondary-theme;
+  font-weight: $font-weight-bold;
 }

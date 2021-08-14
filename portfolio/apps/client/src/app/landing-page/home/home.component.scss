@@ -238,32 +238,233 @@
     }
   }
 }
-.app-l-landing-experience-summary{
-    color: $text-primary-theme;
-    max-width: 260px;
-    padding: 21px 39px;
-    margin: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    @extend %flex-vert-center;
-    border-radius: 10px;
-    margin-top: 56px;
-    margin-bottom: 62px;
-    &--item{
-        width: 50%;
-        text-align: center;
-        .experience-summary{
-            @extend %flex-col;
-            font-family: $font-secondary;
-            &-nos{
-                font-size: 2.4rem;
-                color: $text-secondary-theme;
-            }
-            &-title{
-                font-size: $text-md;
-                color: $text-primary-theme;
-            }
-        }
+.app-l-landing-experience-summary {
+  color: $text-primary-theme;
+  max-width: 260px;
+  padding: 21px 39px;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  @extend %flex-vert-center;
+  border-radius: 10px;
+  margin-top: 56px;
+  margin-bottom: 62px;
+  &--item {
+    width: 50%;
+    text-align: center;
+    .experience-summary {
+      @extend %flex-col;
+      font-family: $font-secondary;
+      &-nos {
+        font-size: 2.4rem;
+        color: $text-secondary-theme;
+        font-weight: $font-weight-bold;
+      }
+      &-title {
+        font-size: $text-md;
+        color: $text-primary-theme;
+      }
     }
+  }
+}
+.app-l-landing-recent-works {
+  position: relative;
+  margin-top: 270px;
+  .app-l-landing-recent-project-list {
+    @extend %flex-wrap;
+    @extend %flex-vert-center-start;
+    &--item {
+      flex: 0 1 356px;
+      margin-right: 75px;
+      position: relative;
+      margin-top: 85px;
+      cursor: pointer;
+      .rtl &,
+      [dir='rtl'] & {
+        margin-right: 0;
+        margin-left: 75px;
+      }
+      &:hover {
+        .project-list {
+          &--image {
+            position: relative;
+            &:before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0, 0, 0, 0.8);
+            }
+          }
+          &--title {
+            opacity: 1;
+            bottom: 20px;
+            color: $white;
+          }
+        }
+      }
+      .project-list {
+        &--image {
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 16px;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            transition: background-color $animation-type1 $animation-duration3;
+          }
+        }
+        &--title {
+          opacity: 0;
+          transition: opacity $animation-type1 $animation-duration3,
+            bottom $animation-type1 $animation-duration3;
+          font-size: 18px;
+          position: absolute;
+          bottom: 0;
+          left: 30px;
+          z-index: 1;
+          .rtl &,
+          [dir='rtl'] & {
+            left: auto;
+            right: 30px;
+          }
+        }
+      }
+    }
+  }
+  .app-l-landing-recent-project--more {
+    text-align: center;
+    margin-top: 30px;
+    @extend %flex-all-center;
+  }
+}
+.app-l-landing-recommendations {
+  margin-left: -106px;
+  margin-top: 58px;
+  &--item {
+    @extend %flex;
+    &--img {
+      img {
+        width: 277px;
+        object-fit: cover;
+      }
+    }
+    &--recom__wrapper {
+      width: 100%;
+      background-color: #141414;
+      padding: 45px 50px 20px;
+      position: relative;
+      @extend %flex-col;
+      &--quote {
+        color: $text-secondary-theme;
+        position: relative;
+        &:before {
+          content: '"';
+          position: absolute;
+          top: 0;
+          font-size: 9.6rem;
+          font-family: 'Poor Richard', sans-serif;
+        }
+      }
+      &--text {
+        margin-top: 56px;
+        font-size: 2.4rem;
+        color: $white;
+        font-family: $font-secondary;
+        font-weight: $font-weight-regular;
+        line-height: 3.4rem;
+        .text-highlight {
+          margin-right: 5px;
+          display: inline;
+        }
+      }
+      &--user {
+        margin-top: auto;
+        font-family: $font-secondary;
+        margin-bottom: 5px;
+        color: $white;
+        font-size: $text-md;
+      }
+      &--company {
+        color: $text-sub-theme;
+        font-family: $font-secondary;
+        font-size: $text-md;
+      }
+    }
+  }
+  .rtl &,
+  [dir='rtl'] & {
+    margin-right: -106px;
+    margin-left: 0;
+  }
+}
+.app-l-landing-connect {
+  margin-top: 270px;
+  &-wrapper {
+    background-image: url(../../../assets/images/bgConnect.png);
+    min-height: 350px;
+    background-size: cover;
+    margin-left: -106px;
+    @extend %flex-col;
+    @extend %flex-all-center;
+    .rtl &,
+    [dir='rtl'] & {
+      margin-right: -106px;
+      margin-left: 0;
+    }
+    &--image {
+      margin-bottom: 30px;
+    }
+    &--interest {
+      color: $white;
+      font-size: $text-xl;
+      margin-bottom: 35px;
+    }
+    &--links {
+      @extend %flex;
+      &--item {
+        margin-right: 90px;
+        &:last-child {
+          margin-right: 0;
+          .rtl &,
+          [dir='rtl'] & {
+            margin-left: 0;
+          }
+        }
+        .rtl &,
+        [dir='rtl'] & {
+          margin-right: 0;
+          margin-left: 90px;
+        }
+        a {
+          img {
+            width: 22px;
+            margin-right: 5px;
+            .rtl &,
+            [dir='rtl'] & {
+              margin-right: 0;
+              margin-left: 5px;
+            }
+          }
+          font-size: $text-xl;
+          @extend %flex-vert-center;
+          color: $white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.app-l-landing-footer{
+  min-height: 130px;
+  margin-left: -106px;
+  @extend %flex-all-center;
+  color: $white;
+  font-size: $text-xl;
 }
 .app-l-landing-title {
   font-size: 4.8rem;

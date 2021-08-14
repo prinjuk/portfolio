@@ -47,6 +47,7 @@
     @extend %flex-all-center;
     font-size: $text-xl;
     line-height: 2.7rem;
+    padding: 0 20px;
     &:hover {
       text-decoration: none;
       border-color: $app-theme-secondary;
