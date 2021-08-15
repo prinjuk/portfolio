@@ -7,9 +7,16 @@
 
 .app-l-landing-section {
   @extend %flex;
+  @extend %container;
+  @media (max-width: $screen-lg) {
+    @include flex-direction(column);
+  }
   &--left {
     margin-right: auto;
     margin-top: 278px;
+    @media (max-width: $screen-lg) {
+      margin: 50px 0 0;
+    }
     .rtl &,
     [dir='rtl'] & {
       margin-right: 0;
@@ -19,6 +26,11 @@
   &--right {
     margin-top: 140px;
     margin-left: auto;
+    position: absolute;
+    right: 0;
+    @media (max-width: $screen-lg) {
+      display: none;
+    }
     .rtl &,
     [dir='rtl'] & {
       margin-left: 0;
@@ -38,12 +50,19 @@
       font-size: 6.4rem;
       line-height: 9rem;
       color: $text-primary-theme;
+      @media (max-width: $screen-lg) {
+        font-size: 3rem;
+        line-height: 4rem;
+      }
     }
     .last-name {
       font-weight: $font-weight-regular;
       font-size: 6.4rem;
       margin-bottom: 30px;
       color: $app-theme-white-1;
+      @media (max-width: $screen-lg) {
+        font-size: 3rem;
+      }
     }
   }
   &--job {
@@ -55,19 +74,37 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-animation: hue 10s infinite linear;
+    @media (max-width: $screen-lg) {
+      font-size: $text-xl;
+    }
   }
   &--highlight-actions {
     margin-top: 93px;
+    @media (max-width: $screen-lg) {
+      margin-top: 50px;
+    }
     .app-btn-group {
       @extend %flex-vert-center;
+      @media (max-width: $screen-lg) {
+        @include flex-direction(column);
+        button {
+          width: 100%;
+          margin: 10px 0;
+        }
+      }
     }
   }
 }
 .app-l-landing-aboutme {
+  @extend %container;
   @extend %flex;
   margin-top: 270px;
   overflow: hidden;
   position: relative;
+  @media (max-width: $screen-lg) {
+    margin-top: 50px;
+    @include flex-direction(column);
+  }
   &--left {
     position: relative;
     margin: 0;
@@ -78,18 +115,33 @@
       left: 97px;
       top: 35px;
       width: 241px;
+      @media (max-width: $screen-lg) {
+        position: relative;
+        top: auto;
+        left: auto;
+        border-radius: 50%;
+        margin: auto;
+        display: block;
+      }
     }
     .profile-pic-graphics {
       position: absolute;
       left: 0;
       top: 0;
       z-index: -1;
+      @media (max-width: $screen-lg) {
+        display: none;
+      }
     }
   }
   &--right {
     margin-left: 70px;
     max-width: 633px;
     width: 100%;
+    @media (max-width: $screen-lg) {
+      margin-left: 0;
+      margin-top: 50px;
+    }
     .rtl &,
     [dir='rtl'] & {
       margin-left: 0;
@@ -101,6 +153,10 @@
     line-height: 4.8rem;
     color: $text-primary-theme;
     margin-bottom: 23px;
+    @media (max-width: $screen-lg) {
+      font-size: 2.4rem;
+      margin-bottom: 5px;
+    }
   }
   &--role {
     font-size: $text-xl;
@@ -108,6 +164,9 @@
     text-transform: uppercase;
     line-height: 1.9rem;
     margin-bottom: 32px;
+    @media (max-width: $screen-lg) {
+      font-size: $text-xl;
+    }
   }
   &--intro {
     font-size: $text-xl;
@@ -115,6 +174,9 @@
     text-transform: lowercase;
     line-height: 3.8rem;
     margin-bottom: 20px;
+    @media (max-width: $screen-lg) {
+      font-size: $text-md;
+    }
   }
   &--skills {
     font-size: 2.4rem;
@@ -122,10 +184,16 @@
     line-height: 2.5rem;
     margin-bottom: 12px;
     text-transform: uppercase;
+    @media (max-width: $screen-lg) {
+      font-size: $text-md;
+    }
     &-text {
       font-size: $text-xl;
       color: $text-primary-theme;
       line-height: 3.4rem;
+      @media (max-width: $screen-lg) {
+        font-size: $text-md;
+      }
     }
     &-pics {
       ul {
@@ -154,134 +222,175 @@
   }
 }
 .app-l-landing-experience {
+  @extend %container;
   position: relative;
   margin-top: 270px;
-  max-width: calc(100% - 100px);
+  color: $white;
+  @media (max-width: $screen-lg) {
+    margin-top: 50px;
+   }
   &--list {
-    ul {
+    > ul {
       position: relative;
       &:before {
         width: 1px;
-        height: calc(100% - 105px);
-        background-color: $text-secondary-theme;
         content: '';
         position: absolute;
-        top: 56px;
-        left: 8px;
       }
       .exp-list {
         position: relative;
-        color: $text-primary-theme;
-        background-color: rgba(0, 0, 0, 0.8);
-        border-radius: 50px;
-        padding: 28px;
-        font-size: $text-xl;
-        @extend %flex-vert-center;
-        margin-bottom: 18px;
-        max-width: calc(100% - 30px);
-        margin-left: auto;
-
-        .rtl &,
-        [dir='rtl'] & {
-          margin-right: auto;
-          margin-left: 0;
+        @extend %flex;
+        margin-bottom: 30px;
+        @media (max-width: $screen-lg) {
+          @include flex-direction(column);
         }
-        &:before {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          border: 2px solid transparent;
-          background-color: $text-secondary-theme;
-          content: '';
-          position: absolute;
-          top: 52px;
-          left: -26px;
-          .rtl &,
-          [dir='rtl'] & {
-            right: -26px;
-            left: 0;
+        &--learned {
+          @extend %flex;
+          @media (max-width: $screen-lg) {
+            @include flex-direction(column);
           }
-        }
-        &:after {
-          width: 16px;
-          height: 16px;
-          border-radius: 50%;
-          border: 2px solid $text-secondary-theme;
-          background-color: transparent;
-          content: '';
-          position: absolute;
-          top: 48px;
-          left: -30px;
-          .rtl &,
-          [dir='rtl'] & {
-            right: -30px;
-            left: 0;
+          &--img {
+            img {
+              max-width: 400px;
+              width: 100%;
+            }
+          }
+          &--details {
+            margin-left: 38px;
+            @media (max-width: $screen-lg) {
+              margin: 0;
+              margin-top: 30px;
+            }
+            &--title {
+              font-weight: $font-weight-medium;
+              font-size: $text-xl;
+              margin-bottom: 20px;
+              font-family: $font-secondary;
+              @media (max-width: $screen-lg) {
+                display: none;
+              }
+            }
+            &--company {
+              font-weight: $font-weight-regular;
+              font-size: $text-xl;
+              margin-bottom: 18px;
+              font-family: $font-secondary;
+              @media (max-width: $screen-lg) {
+                font-size: $text-sm-plus;
+              }
+            }
+            &--roles {
+              font-size: $text-sm-plus;
+              line-height: 2.7rem;
+              ul {
+                margin-left: 18px;
+                list-style: disc;
+                margin-top: 10px;
+                li {
+                  color: $text-sub-theme;
+                  line-height: 2.7rem;
+                  font-family: $font-secondary;
+                  @media (max-width: $screen-lg) {
+                    font-size: $text-sm-plus;
+                  }
+                  span {
+                    color: $white;
+
+                    font-family: $font-secondary;
+                  }
+                }
+              }
+            }
           }
         }
         &:last-child {
-          &:before {
-            animation: $animation-type1 3s glowCurrent infinite;
-            background-color: $text-primary-theme;
+          .exp-list--year {
+            &:before {
+              display: none;
+            }
           }
         }
         &--year {
-          flex: 1;
+          white-space: nowrap;
+          margin-right: 38px;
+          font-size: $text-sm;
+          line-height: 1.2rem;
+          color: $text-fade;
+          position: relative;
+          flex-shrink: 0;
+          min-width: 90px;
+          @extend %flex;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 22px;
+            right: 4px;
+            width: 1px;
+            height: 100%;
+            background: #565353;
+            border-radius: 20px;
+            @media (max-width: $screen-lg) {
+              display: none;
+            }
+          }
+          svg {
+            margin-left: auto;
+            @media (max-width: $screen-lg) {
+              display: none;
+            }
+          }
+        }
+        &--details {
+          @extend %flex-col;
+          @extend %flex-vert-start;
         }
         &--title {
-          flex: 1;
+          min-width: 146px;
+          height: 30px;
+          background-color: $app-theme-tertiary;
+          color: $black;
+          @extend %flex-all-center;
+          font-weight: $font-weight-medium;
+          border-radius: 8px;
+          font-family: $font-secondary;
+          padding: 0 20px;
+          font-size: $text-md;
+          line-height: 1.4rem;
+          margin-bottom: 36px;
+          margin-top: -11px;
+          @media (max-width: $screen-lg) {
+            margin: 10px 0;
+          }
         }
-        &--learned {
-          flex: 1;
-          line-height: 2.6rem;
-        }
-      }
-    }
-  }
-}
-.app-l-landing-experience-summary {
-  color: $text-primary-theme;
-  max-width: 260px;
-  padding: 21px 39px;
-  margin: auto;
-  background-color: rgba(0, 0, 0, 0.8);
-  @extend %flex-vert-center;
-  border-radius: 10px;
-  margin-top: 56px;
-  margin-bottom: 62px;
-  &--item {
-    width: 50%;
-    text-align: center;
-    .experience-summary {
-      @extend %flex-col;
-      font-family: $font-secondary;
-      &-nos {
-        font-size: 2.4rem;
-        color: $text-secondary-theme;
-        font-weight: $font-weight-bold;
-      }
-      &-title {
-        font-size: $text-md;
-        color: $text-primary-theme;
       }
     }
   }
 }
 .app-l-landing-recent-works {
+  @extend %container;
   position: relative;
   margin-top: 270px;
+  @media (max-width: $screen-lg) {
+    margin-top: 50px;
+  }
   .app-l-landing-recent-project-list {
     @extend %flex-wrap;
-    @extend %flex-vert-center-start;
+    @extend %flex-horiz-away-vert-center;
+    @media (max-width: $screen-lg) {
+      @include flex-direction(column);
+    }
     &--item {
       flex: 0 1 356px;
-      margin-right: 75px;
       position: relative;
       margin-top: 85px;
       cursor: pointer;
-      .rtl &,
-      [dir='rtl'] & {
-        margin-right: 0;
-        margin-left: 75px;
+      @media (max-width: $screen-lg) {
+        flex: 1;
+        margin-top: 10px;
+        @include flex-direction(column);
+        img {
+          width: 100%;
+        }
       }
       &:hover {
         .project-list {
@@ -343,14 +452,21 @@
   }
 }
 .app-l-landing-recommendations {
-  margin-left: -106px;
   margin-top: 58px;
   &--item {
     @extend %flex;
+    @media (max-width: $screen-lg) {
+      @include flex-direction(column);
+    }
     &--img {
       img {
-        width: 277px;
+        width: 100%;
+        max-width: 277px;
         object-fit: cover;
+        @media (max-width: $screen-lg) {
+          display: block;
+          margin: auto;
+        }
       }
     }
     &--recom__wrapper {
@@ -377,9 +493,15 @@
         font-family: $font-secondary;
         font-weight: $font-weight-regular;
         line-height: 3.4rem;
+        @media (max-width: $screen-lg) {
+         font-size: $text-xl;
+        }
         .text-highlight {
           margin-right: 5px;
           display: inline;
+          @media (max-width: $screen-lg) {
+            font-size: $text-xl;
+           }
         }
       }
       &--user {
@@ -388,34 +510,38 @@
         margin-bottom: 5px;
         color: $white;
         font-size: $text-md;
+        @media (max-width: $screen-lg) {
+          font-size: $text-sm;
+          margin-top: 30px;
+         }
       }
       &--company {
         color: $text-sub-theme;
         font-family: $font-secondary;
         font-size: $text-md;
+        @media (max-width: $screen-lg) {
+          font-size: $text-sm; 
+         }
       }
     }
-  }
-  .rtl &,
-  [dir='rtl'] & {
-    margin-right: -106px;
-    margin-left: 0;
   }
 }
 .app-l-landing-connect {
   margin-top: 270px;
+  @media (max-width: $screen-lg) {
+    margin-top: 50px;
+   }
+  .app-l-landing-title {
+    max-width: 1400px;
+    padding: 0 20px;
+    margin: 0 auto 58px;
+  }
   &-wrapper {
     background-image: url(../../../assets/images/bgConnect.png);
     min-height: 350px;
     background-size: cover;
-    margin-left: -106px;
     @extend %flex-col;
     @extend %flex-all-center;
-    .rtl &,
-    [dir='rtl'] & {
-      margin-right: -106px;
-      margin-left: 0;
-    }
     &--image {
       margin-bottom: 30px;
     }
@@ -426,8 +552,17 @@
     }
     &--links {
       @extend %flex;
+      @media (max-width: $screen-lg) {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 30px;
+       }
       &--item {
         margin-right: 90px;
+        @media (max-width: $screen-lg) {
+          margin-right: 10px;
+          margin-top: 30px;
+         }
         &:last-child {
           margin-right: 0;
           .rtl &,
@@ -459,9 +594,8 @@
     }
   }
 }
-.app-l-landing-footer{
+.app-l-landing-footer {
   min-height: 130px;
-  margin-left: -106px;
   @extend %flex-all-center;
   color: $white;
   font-size: $text-xl;
@@ -471,12 +605,19 @@
   color: $text-primary-theme;
   line-height: 4.8rem;
   margin-bottom: 58px;
+  @media (max-width: $screen-lg) {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+  }
 }
 .app-l-plus-animator {
   position: absolute;
   top: 0;
   right: -100px;
   z-index: -1;
+  @media (max-width: $screen-lg) {
+    display: none;
+  }
   .rtl &,
   [dir='rtl'] & {
     right: 0;

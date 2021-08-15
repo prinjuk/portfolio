@@ -1,7 +1,8 @@
 @use '../abstracts/palette' as *;
 @use '../abstracts/typography' as *;
 body {
-  background-color: $app-theme-black-1;
+  background-color: $app-theme-black-1;   
+  overflow-x: hidden;
 }
 .text-highlight{
   color: $text-secondary-theme;

@@ -37,6 +37,9 @@
   display: flex;
   justify-content: center;
 }
+%justify-between{
+  justify-content: space-between;
+}
 
 %flex-vert-center {
   display: flex;
@@ -127,4 +130,10 @@
   visibility: visible;
   opacity: 1;
   pointer-events: all;
+}
+
+%container{
+  max-width: 1400px;
+  margin: auto; 
+  padding: 0 20px;
 }
