@@ -69,10 +69,10 @@
   }
 }
 .app-btn-group{
-  button{
+  button,a{
     margin-top: 10px;
     margin-right: 35px;
-    & + button{
+    & + button,a{
       .rtl &,
       [dir='rtl'] &{
         margin-right: 0;
