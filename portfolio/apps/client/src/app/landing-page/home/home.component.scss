@@ -115,12 +115,11 @@
       left: 97px;
       top: 35px;
       width: 241px;
+      border-radius: 10px;
       @media (max-width: $screen-lg) {
         position: relative;
         top: auto;
-        left: auto;
-        border-radius: 50%;
-        margin: auto;
+        left: auto; 
         display: block;
       }
     }
@@ -253,6 +252,7 @@
           &--img {
             img,.swiper-horizontal {
               width: 400px; 
+              border-radius: 10px;
               @media (max-width: $screen-lg) {
                 width: 100%;
               }
