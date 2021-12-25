@@ -248,9 +248,10 @@
           @extend %flex;
           @media (max-width: $screen-lg) {
             @include flex-direction(column);
+            width: 100%;
           }
           &--img {
-            img {
+            img,.swiper-horizontal {
               width: 400px; 
               @media (max-width: $screen-lg) {
                 width: 100%;
@@ -284,6 +285,7 @@
             &--roles {
               font-size: $text-sm-plus;
               line-height: 2.7rem;
+              font-family: $font-secondary;
               ul {
                 margin-left: 18px;
                 list-style: disc;

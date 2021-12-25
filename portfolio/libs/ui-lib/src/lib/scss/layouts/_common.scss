@@ -8,3 +8,8 @@ body {
   color: $text-secondary-theme;
   font-weight: $font-weight-bold;
 }
+//swiper js
+.swiper-button-prev, .swiper-button-next{
+  --swiper-navigation-size: 23px;
+  color: $black;
+}

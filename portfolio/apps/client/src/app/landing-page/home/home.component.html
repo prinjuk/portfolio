@@ -8,21 +8,21 @@
     <div class="app-l-landing-section--highlight-actions">
       <div class="app-btn-group">
         <a
-        href="https://github.com/prinjuk"
-        target="_blank"
+          href="https://github.com/prinjuk"
+          target="_blank"
           class="app-c-btn app-c-btn--primary"
           aria-label="Click here to visit my projects"
         >
           Projects
-      </a>
+        </a>
         <a
-        href="./assets/cv-prinju.pdf"
-        target="_blank"
+          href="./assets/cv-prinju.pdf"
+          target="_blank"
           class="app-c-btn app-c-btn--primary"
           aria-label="Click here to visit my cv"
         >
           CV
-    </a>
+        </a>
       </div>
     </div>
   </div>
@@ -32,7 +32,11 @@
 </div>
 <div class="app-l-landing-aboutme">
   <div class="app-l-landing-aboutme--left">
-    <img src="./assets/images/pic.png" class="profile-pic" alt="me in flesh" />
+    <img
+      src="./assets/images/prinju.jpeg"
+      class="profile-pic"
+      alt="Prinju Koshy Vaidyan"
+    />
     <img
       src="./assets/images/pic-wrapper.svg"
       class="profile-pic-graphics"
@@ -44,13 +48,13 @@
     <div class="app-l-landing-aboutme--role">FRONT-END DEVELOPER</div>
     <div class="app-l-landing-aboutme--intro">
       sTARTED OFF WITH A COMPUTER SCIENCE BACKGROUND AND VERY KEEN TO LEARN
-      NEWER TECHNOLOGIES LANDED ME AS A ui dEVELOPER.tHROUGH FAST LEARNING I
+      NEWER TECHNOLOGIES LANDED ME AS A UI dEVELOPER.tHROUGH FAST LEARNING I
       PROGRESSED MY WAY TO BECOME A FRONTEND DEVELOPER AND CREATED MULTIPLE
       ENTERPRISE LEVEL APPLICATIONS WITH CLEAN , MAINTAINABLE AND SCALABLE CODE.
     </div>
     <div class="app-l-landing-aboutme--skills">sKILLS</div>
     <div class="app-l-landing-aboutme--skills-text">
-      Javascript, Angular, reactjs, scss, bem
+      Javascript, Angular, React , NX, SCSS, BEM
     </div>
     <div class="app-l-landing-aboutme--skills-pics">
       <ul>
@@ -247,7 +251,23 @@
           <div class="exp-list--title">FrontEnd Developer</div>
           <div class="exp-list--learned">
             <div class="exp-list--learned--img">
-              <img src="./assets/images/exp-tech-sample.png" alt="img" />
+              <swiper [config]="config">
+                <ng-template swiperSlide>
+                  <img src="./assets/images/exp/award.jpeg" alt="img"
+                /></ng-template>
+                <ng-template swiperSlide>
+                  <img src="./assets/images/exp/award1.jpeg" alt="img"
+                /></ng-template>
+                <ng-template swiperSlide>
+                  <img src="./assets/images/exp/spot.jpeg" alt="img"
+                /></ng-template>
+                <ng-template swiperSlide>
+                  <img src="./assets/images/exp/team.jpeg" alt="img"
+                /></ng-template>
+                <ng-template swiperSlide>
+                  <img src="./assets/images/exp/desk.jpeg" alt="img"
+                /></ng-template>
+              </swiper>
             </div>
             <div class="exp-list--learned--details">
               <div class="exp-list--learned--details--title">
@@ -286,13 +306,11 @@
                   <li>
                     Reusable UI component base for all projects for ease of
                     setup.
-                  </li> 
+                  </li>
+                  <li>Won Experion spot award</li>
+                  <li>Won Experion Award of Excellence</li>
                   <li>
-                    Won Experion spot award
-                  </li> 
-                  <li>
-                    Gave tech talk in Interaction Design Foundation
-                    event.
+                    Gave tech talk in Interaction Design Foundation event.
                   </li>
                   <li>Followed Scrum Agile methodologies and GIT.</li>
                 </ul>
@@ -499,12 +517,12 @@
 <div class="app-l-landing-connect">
   <div class="app-l-landing-title">Connect with me</div>
   <div class="app-l-landing-connect-wrapper">
-    <div class="app-l-landing-connect-wrapper--image">
+    <!-- <div class="app-l-landing-connect-wrapper--image">
       <img src="./assets/images/shakehands.png" alt="connect img" />
     </div>
     <div class="app-l-landing-connect-wrapper--interest">
       Interested in working together?
-    </div>
+    </div> -->
     <div class="app-l-landing-connect-wrapper--links">
       <div class="app-l-landing-connect-wrapper--links--item">
         <a href="https://twitter.com/prinjuvaidyan" target="_blank">
